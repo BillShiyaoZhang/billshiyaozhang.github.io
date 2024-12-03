@@ -1,12 +1,12 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Shiyao Zhang",
+    "label": "PhD candidate",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "syzhang@liverpool.ac.uk",
+    "phone": "",
+    "url": "https://billshiyaozhang.github.io/",
+    "summary": "A young researcher in the field of LLM-Assisted Ontology Alignment",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
