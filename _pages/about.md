@@ -19,7 +19,7 @@ selected_papers: true
 social: true
 ---
 
-I am a PhD candidate at [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en) (XJTLU), supervised by [Prof. Jie Zhang](https://www.xjtlu.edu.cn/en/). My research focuses on **Generative Agents**, **Ontology Alignment**, and **LLM-assisted Dialogue Systems**.
+I am a PhD candidate at [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en) (XJTLU). My research focuses on **Generative Agents**, **Ontology Alignment**, and **LLM-assisted Dialogue Systems**.
 
 Before that, I completed my BEng in Digital Media Technology at XJTLU (2014-2018) and an MSc in Design Informatics at the University of Edinburgh (2018-2020).
 
@@ -36,8 +36,8 @@ See [my publications page](/publications/) for a full list.
 
 ## Fun Workshop
 
-I am a co-organizer of the [Fun Workshop](https://fun-research-workshop.github.io/fun-workshop/) at XJTLU — a community-driven workshop series that brings together researchers and students to share interesting projects, ideas, and skills across disciplines.
+I serve as coordinator for [Fun Workshop](https://fun-research-workshop.github.io/fun-workshop/) at XJTLU — a community-driven workshop series that brings together researchers and students to share interesting projects, ideas, and skills across disciplines.
 
 ## Contact
 
-Feel free to reach out at: **syzhang@liverpool.ac.uk**
+Feel free to reach out at: **shiyao.zhang14@student.xjtlu.edu.cn**
