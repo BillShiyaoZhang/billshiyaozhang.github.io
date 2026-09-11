@@ -4,3 +4,6 @@ reddit.com
 # Verified article exists (2026-09-11); ResearchGate rejects automated requests with HTTP 403.
 # Keep the public paper link available to readers and exclude only this exact URL.
 ^https://www\.researchgate\.net/publication/384291958_Active_Collaboration_in_IoT_Cognitive-agent_Oriented_Resource-centric_Architecture$
+
+# User-provided Scholar profile: HTTP 200 locally, HTTP 403 on GitHub's runner (2026-09-11).
+^https://scholar\.google\.com/citations\?user=OCfMc6oAAAAJ&hl=en$

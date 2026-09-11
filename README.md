@@ -39,7 +39,7 @@ npx purgecss -c purgecss.config.js
 
 The existing GitHub Actions workflow builds on `main`/`master` pushes, then publishes `_site` to `gh-pages`. GitHub Pages should use the `gh-pages` branch. Pull requests build without publishing.
 
-The link-check workflow builds the same commit before scanning `_site/**/*.html`. It checks local pages, assets, and section anchors offline, then checks external URLs separately. This includes links generated from bilingual templates and project data while honoring Jekyll's exclusions. It uses Lychee 0.24.2 with `--no-ignore` (because `_site` is gitignored), the absolute `_site` root, and `--index-files index.html` for directory URLs. Raw Liquid templates and excluded theme documentation are not published pages and are not scanned as HTML. Bot-blocking exceptions are documented in `.lycheeignore`; the verified ICCCN paper on ResearchGate currently returns HTTP 403 to the checker.
+The link-check workflow builds the same commit before scanning `_site/**/*.html`. It checks local pages, assets, and section anchors offline, then checks external URLs separately. This includes links generated from bilingual templates and project data while honoring Jekyll's exclusions. It uses Lychee 0.24.2 with `--no-ignore` (because `_site` is gitignored), the absolute `_site` root, and `--index-files index.html` for directory URLs. Raw Liquid templates and excluded theme documentation are not published pages and are not scanned as HTML. URL-specific bot-blocking exceptions are documented in `.lycheeignore`: the verified ICCCN paper on ResearchGate and the supplied Google Scholar profile return HTTP 403 to automated CI requests.
 
 ## Content provenance — September 2026 update
 
