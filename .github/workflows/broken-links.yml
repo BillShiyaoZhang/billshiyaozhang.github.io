@@ -9,6 +9,12 @@ on:
       - "assets/**"
       - "**.html"
       - "**.js"
+      - "**.json"
+      - "**.bib"
+      - "_plugins/**/*.rb"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - ".lycheeignore"
       - "**.liquid"
       - "**/*.md"
       - "**.yml"
@@ -27,6 +33,12 @@ on:
       - "assets/**"
       - "**.html"
       - "**.js"
+      - "**.json"
+      - "**.bib"
+      - "_plugins/**/*.rb"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - ".lycheeignore"
       - "**.liquid"
       - "**/*.md"
       - "**.yml"
@@ -38,15 +50,55 @@ on:
       - "!.github/workflows/prettier.yml"
       - "!lighthouse_results/**"
 
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   link-checker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Link Checker 🔗
-        uses: lycheeverse/lychee-action@v2.1.0
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Build the site
+        env:
+          JEKYLL_ENV: production
+        run: |
+          pip3 install --upgrade nbconvert
+          bundle exec jekyll build
+
+      # Check the rendered pages, including data-driven projects and both locales.
+      # Raw Liquid expressions are not file paths; Jekyll also excludes theme docs.
+      - name: Check local pages, assets, and anchors
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          lycheeVersion: v0.24.2
           fail: true
-          # removed md files that include liquid tags
-          args: --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --verbose --no-progress './**/*.md' './**/*.html'
+          failIfEmpty: true
+          output: lychee/local.md
+          args: >-
+            --no-ignore --offline --include-fragments
+            --root-dir '${{ github.workspace }}/_site' --index-files index.html
+            --no-progress '_site/**/*.html'
+      - name: Check external links
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          lycheeVersion: v0.24.2
+          fail: true
+          failIfEmpty: true
+          output: lychee/external.md
+          args: >-
+            --no-ignore --scheme https --scheme http --user-agent 'curl/7.54'
+            --root-dir '${{ github.workspace }}/_site'
+            --timeout 20 --max-retries 2 --max-concurrency 8
+            --no-progress '_site/**/*.html'
