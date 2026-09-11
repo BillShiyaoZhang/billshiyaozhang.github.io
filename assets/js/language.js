@@ -1,0 +1,1 @@
+(()=>{const e=document.getElementById("language-switch");if(!e)return;const n=e.getAttribute("href"),t=()=>{const t=new URL(n,window.location.href);t.search=window.location.search,t.hash=window.location.hash,e.href=t.pathname+t.search+t.hash};t(),window.addEventListener("hashchange",t)})();
