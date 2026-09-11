@@ -7,9 +7,12 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_sass/**/*.scss"
       - "**.bib"
       - "**.html"
       - "**.js"
+      - "**.json"
+      - "_plugins/**/*.rb"
       - "**.liquid"
       - "**/*.md"
       - "**.yml"
@@ -34,9 +37,12 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_sass/**/*.scss"
       - "**.bib"
       - "**.html"
       - "**.js"
+      - "**.json"
+      - "_plugins/**/*.rb"
       - "**.liquid"
       - "**/*.md"
       - "**.yml"

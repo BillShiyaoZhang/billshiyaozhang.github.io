@@ -1,0 +1,27 @@
+{% assign project_text = include.project %}
+{% if page.lang == 'zh-CN' %}{% assign project_text = include.project.zh %}{% endif %}
+<article class="work-card" id="{{ include.project.id }}">
+  <p class="project-kind">{{ project_text.category }}</p>
+  <h3>
+    <a href="{{ include.project.url }}">
+      {{- project_text.name }}
+      <span aria-hidden="true">↗</span></a
+    >
+  </h3>
+  <p class="project-purpose">{{ project_text.summary }}</p>
+  {% if project_text.detail %}
+    <p class="project-detail">{{ project_text.detail }}</p>
+  {% endif %}
+  <div class="project-meta">
+    <span>{{ project_text.status }}</span><span>{{ include.project.year }}</span>
+  </div>
+  {% if include.project.links %}
+    <div class="project-links">
+      {% for link in include.project.links -%}
+        <a href="{{ link.url }}">
+          {%- if page.lang == 'zh-CN' %}{{ link.label_zh }}{% else %}{{ link.label }}{% endif -%}
+        </a>
+      {%- endfor %}
+    </div>
+  {% endif %}
+</article>

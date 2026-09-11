@@ -1,10 +1,12 @@
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign ui = site.data.ui[current_lang] %}
 <!doctype html>
-<html lang="{{ site.lang }}">
+<html lang="{{ current_lang }}">
   <!-- Head -->
   <head>
     {% if page.redirect %}
       {% if page.redirect == true %}
-        {% assign redirect = site.baseurl | append: '/' %}
+        {% assign redirect = '/' | localized_url: current_lang | relative_url %}
       {% elsif page.redirect contains '://' %}
         {% assign redirect = page.redirect %}
       {% else %}
@@ -17,11 +19,12 @@
 
   <!-- Body -->
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    <a class="skip-link" href="#main-content">{{ ui.skip }}</a>
     <!-- Header -->
     {% include header.liquid %}
 
     <!-- Content -->
-    <div class="container mt-5" role="main">
+    <div class="container mt-5" role="main" id="main-content" tabindex="-1">
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">
@@ -73,5 +76,6 @@
     {% include scripts/jekyll_tabs.liquid %}
     {% include scripts/back_to_top.liquid %}
     {% include scripts/search.liquid %}
+    <script src="{{ '/assets/js/language.js' | relative_url | bust_file_cache }}" defer></script>
   </body>
 </html>

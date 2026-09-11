@@ -1,0 +1,501 @@
+// Portfolio layer using al-folio's existing themes.
+:root {
+  --portfolio-surface: #f6f7fa;
+  --portfolio-muted: #626471;
+  --global-theme-color: #684599;
+  --global-hover-color: #503276;
+  --global-text-color: #262830;
+  --global-text-color-light: #626471;
+}
+html[data-theme="dark"] {
+  --portfolio-surface: #292b33;
+  --portfolio-muted: #b3b6c4;
+  --global-theme-color: #c8acf0;
+  --global-hover-color: #e0c8ff;
+  --global-text-color: #ececf1;
+  --global-text-color-light: #b3b6c4;
+}
+body {
+  font-size: 1rem;
+  line-height: 1.75;
+  font-weight: 400;
+}
+a {
+  text-underline-offset: 0.2em;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 5px;
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 1100;
+  background: var(--global-bg-color);
+  padding: 0.6rem 1rem;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+.navbar .navbar-brand {
+  font-size: 1rem;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+.navbar .navbar-nav .nav-link {
+  font-size: 0.9rem;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+}
+.post-title,
+.home-page h1,
+.home-page h2,
+.section-statement {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.035em;
+}
+.post-title {
+  font-size: 2.7rem;
+}
+.post-description {
+  max-width: 47rem;
+  color: var(--portfolio-muted);
+  font-size: 1.1rem;
+}
+.home-page {
+  padding-top: 1rem;
+}
+.profile-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 245px;
+  gap: 4.5rem;
+  align-items: start;
+  padding: 1rem 0 3.2rem;
+}
+.eyebrow,
+.project-kind {
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--global-theme-color);
+}
+.home-page h1 {
+  font-size: clamp(2.6rem, 4.4vw, 3.45rem);
+  line-height: 1.15;
+  margin: 1rem 0;
+}
+.home-page h1 span {
+  display: inline-block;
+  font-family: system-ui, sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  color: var(--portfolio-muted);
+}
+.intro-role {
+  color: var(--portfolio-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.intro-lead {
+  font-size: 1.35rem;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+.intro-portrait {
+  margin: 2.6rem 0 0;
+}
+.intro-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.intro-portrait figcaption {
+  color: var(--portfolio-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin-top: 0.8rem;
+}
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.35rem;
+  margin-top: 1.8rem;
+  font-size: 0.9rem;
+}
+.primary-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+  border-radius: 4px;
+}
+.primary-link:hover {
+  background: var(--global-hover-color);
+  color: var(--global-bg-color);
+  text-decoration: none;
+}
+.home-section {
+  border-top: 1px solid var(--global-divider-color);
+  padding: 2.5rem 0 3rem;
+}
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.section-heading h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+.section-heading > a {
+  font-size: 0.9rem;
+}
+.research-overview {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 3.5rem;
+}
+.section-statement {
+  font-size: 1.55rem;
+  line-height: 1.4;
+  max-width: 15rem;
+}
+.research-overview p:last-child {
+  margin-bottom: 0;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+.work-card {
+  padding: 1.6rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.work-card h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  margin: 0 0 0.8rem;
+}
+.work-card h3 a {
+  color: var(--global-text-color);
+}
+.work-card h3 span {
+  font-size: 1rem;
+  color: var(--global-theme-color);
+}
+.work-card .project-kind {
+  margin-bottom: 0.5rem;
+}
+.project-purpose {
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+.project-detail {
+  color: var(--portfolio-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--portfolio-muted);
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+.community-preview {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 3.5rem;
+}
+.community-preview h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.contact-strip {
+  padding: 2rem 2.4rem;
+  margin-bottom: 3rem;
+  background: var(--portfolio-surface);
+  border-radius: 5px;
+}
+.contact-strip h2 {
+  font-size: 1.8rem;
+}
+.contact-strip p {
+  margin-bottom: 0.5rem;
+}
+.contact-strip a {
+  overflow-wrap: anywhere;
+}
+.editorial-section {
+  margin: 3rem 0;
+}
+.editorial-section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.3rem;
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--global-divider-color);
+}
+.timeline-item .period {
+  color: var(--portfolio-muted);
+  font-size: 0.9rem;
+}
+.timeline-item h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.timeline-item p:last-child {
+  margin-bottom: 0;
+}
+.timeline-item .institution {
+  color: var(--portfolio-muted);
+}
+.note-block {
+  border-left: 3px solid var(--global-theme-color);
+  padding: 0.3rem 0 0.3rem 1.2rem;
+  margin: 2rem 0;
+}
+.note-block p:last-child {
+  margin-bottom: 0;
+}
+.publications ol.bibliography li {
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+.publications ol.bibliography li .title {
+  font-size: 1.08rem;
+}
+.publications ol.bibliography li .abbr abbr {
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+}
+.publications ol.bibliography li .periodical {
+  color: var(--portfolio-muted);
+}
+footer {
+  font-size: 0.8rem;
+}
+@media (max-width: 767px) {
+  .profile-intro {
+    grid-template-columns: minmax(0, 1fr) 170px;
+    gap: 2rem;
+  }
+  .research-overview,
+  .community-preview {
+    gap: 2rem;
+  }
+}
+@media (max-width: 575px) {
+  body {
+    line-height: 1.7;
+  }
+  .container {
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+  .home-page {
+    padding-top: 0;
+  }
+  .profile-intro {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-top: 0;
+  }
+  .intro-portrait {
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 0.6rem;
+  }
+  .intro-portrait img {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+  }
+  .intro-portrait figcaption {
+    max-width: 11rem;
+    margin: 0;
+  }
+  .home-page h1 {
+    font-size: 2.6rem;
+  }
+  .home-page h1 span {
+    font-size: 1.2rem;
+  }
+  .intro-lead {
+    font-size: 1.2rem;
+  }
+  .research-overview,
+  .community-preview,
+  .project-grid,
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .section-statement {
+    max-width: 100%;
+  }
+  .home-section {
+    padding: 2rem 0;
+  }
+  .work-card {
+    padding: 1.3rem;
+  }
+  .contact-strip {
+    padding: 1.5rem;
+  }
+  .timeline-item {
+    gap: 0.4rem;
+  }
+}
+@media print {
+  .navbar,
+  .profile-links,
+  footer,
+  #back-to-top,
+  .skip-link {
+    display: none !important;
+  }
+  body {
+    padding: 0 !important;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .work-card,
+  .timeline-item {
+    break-inside: avoid;
+  }
+}
+
+.paper-summary {
+  margin: 0.7rem 0;
+  color: var(--portfolio-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.publications .links button.bibtex {
+  color: var(--global-text-color);
+  border: 1px solid var(--global-text-color);
+  margin-left: 0;
+  padding: 0.25rem 1rem;
+  font-weight: 400;
+}
+.publications .links button.bibtex:hover {
+  color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+}
+
+.publications h2.bibliography {
+  color: var(--portfolio-muted);
+  font-size: 1.4rem;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.6rem;
+  min-height: 2.5rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  color: var(--global-theme-color);
+}
+.language-switch:hover {
+  background: var(--portfolio-surface);
+  text-decoration: none;
+}
+.search-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  color: var(--portfolio-muted);
+  background: var(--global-bg-color);
+  font-size: 0.8rem;
+}
+.search-shortcuts kbd {
+  color: inherit;
+  background: var(--portfolio-surface);
+}
+html[lang="zh-CN"] body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.9;
+}
+html[lang="zh-CN"] .home-page h1,
+html[lang="zh-CN"] .home-page h2,
+html[lang="zh-CN"] .post-title,
+html[lang="zh-CN"] .section-statement {
+  font-family: "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
+  letter-spacing: 0;
+}
+html[lang="zh-CN"] .eyebrow,
+html[lang="zh-CN"] .project-kind {
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.project-group {
+  margin-bottom: 3.5rem;
+}
+.project-group > h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 992px) {
+  .navbar-controls {
+    margin-left: 1rem;
+  }
+}
+@media (max-width: 991px) {
+  .navbar-controls .navbar-toggler {
+    display: block;
+  }
+}

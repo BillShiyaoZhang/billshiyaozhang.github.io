@@ -1,35 +1,16 @@
-{% if site.footer_fixed %}
-  <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
-      &copy; Copyright {{ site.time | date: '%Y' }}
-      {{ site.first_name }}
-      {{ site.middle_name }}
-      {{ site.last_name }}. {{ site.footer_text }}
-      {% if site.impressum_path %}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-      {% endif %}
-      {% if site.last_updated %}
-        Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-      {% endif %}
-    </div>
-  </footer>
-{% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
-    {% if site.newsletter.enabled %}
-      {% include scripts/newsletter.liquid %}
-    {% endif %}
-
-    <div class="container">
-      &copy; Copyright {{ site.time | date: '%Y' }}
-      {{ site.first_name }}
-      {{ site.middle_name }}
-      {{ site.last_name }}. {{ site.footer_text }}
-      {% if site.impressum_path %}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-      {% endif %}
-      {% if site.last_updated %}
-        Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-      {% endif %}
-    </div>
-  </footer>
-{% endif %}
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign ui = site.data.ui[current_lang] %}
+<footer class="{% if site.footer_fixed %}fixed-bottom{% else %}sticky-bottom mt-5{% endif %}">
+  <div class="container">
+    &copy; {{ site.time | date: '%Y' }}
+    {{ ui.name }}.
+    {% if current_lang == 'zh-CN' -%}
+      基于 <a href="https://jekyllrb.com/">Jekyll</a> 与 <a href="https://github.com/alshedivat/al-folio">al-folio</a> 构建，由
+      <a href="https://pages.github.com/">GitHub Pages</a> 托管。
+    {%- else -%}
+      Built with <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/alshedivat/al-folio">al-folio</a>. Hosted on
+      <a href="https://pages.github.com/">GitHub Pages</a>.
+    {%- endif %}
+    {% if site.last_updated %}{{ ui.updated }}: {{ site.time | date: '%Y-%m-%d' }}.{% endif %}
+  </div>
+</footer>

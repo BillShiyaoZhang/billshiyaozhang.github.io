@@ -1,5 +1,7 @@
 ---
 ---
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign ui = site.data.ui[current_lang] %}
 <div class="row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
@@ -18,11 +20,15 @@
             {% if site.data.venues[entry.abbr].url %}
               <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
             {% else %}
-              <div>{{- entry.abbr -}}</div>
+              <div>
+                {% if current_lang == 'zh-CN' and entry.abbr == 'Preprint' %}预印本{% else %}{{- entry.abbr -}}{% endif %}
+              </div>
             {% endif %}
           </abbr>
         {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+          <abbr class="badge rounded w-100">
+            {%- if current_lang == 'zh-CN' and entry.abbr == 'Preprint' %}预印本{% else %}{{ entry.abbr }}{% endif -%}
+          </abbr>
         {% endif %}
       {% endif %}
       {% if entry.preview %}
@@ -182,6 +188,16 @@
       {{ entry.note | strip }}
     </div>
 
+    {% if entry.summary %}
+      <p class="paper-summary">
+        {% if current_lang == 'zh-CN' -%}
+          {{- site.data.publication_summaries_zh[entry.key] | default: entry.summary -}}
+        {%- else -%}
+          {{- entry.summary -}}
+        {%- endif %}
+      </p>
+    {% endif %}
+
     <!-- Links/Buttons -->
     <div class="links">
       {% if entry.award %}
@@ -196,16 +212,16 @@
         <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
       {% endif %}
       {% if entry.arxiv %}
-        <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
       {% endif %}
       {% if entry.bibtex_show %}
-        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+        <button type="button" class="bibtex btn btn-sm z-depth-0" aria-expanded="false" aria-controls="bibtex-{{ entry.key }}">BibTeX</button>
       {% endif %}
       {% if entry.html %}
         {% if entry.html contains '://' %}
-          <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+          <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">{{ ui.paper }}</a>
         {% else %}
-          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">{{ ui.paper }}</a>
         {% endif %}
       {% endif %}
       {% if entry.pdf %}
@@ -231,7 +247,7 @@
         <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button">Blog</a>
       {% endif %}
       {% if entry.code %}
-        <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
+        <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">{{ ui.code }}</a>
       {% endif %}
       {% if entry.poster %}
         {% if entry.poster contains '://' %}
@@ -352,7 +368,7 @@
 
     {% if entry.bibtex_show %}
       <!-- Hidden bibtex block -->
-      <div class="bibtex hidden">
+      <div class="bibtex hidden" id="bibtex-{{ entry.key }}" hidden>
         {% highlight bibtex %}
         {{- entry.bibtex | hideCustomBibtex -}}
         {% endhighlight %}

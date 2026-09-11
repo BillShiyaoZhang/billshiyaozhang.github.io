@@ -1,0 +1,290 @@
+---
+- id: knowledge-atlas
+  group: knowledge
+  featured: true
+  year: "2026"
+  url: https://billshiyaozhang.github.io/bedtimenews-kg/
+  name: Bedtime News Knowledge Atlas
+  category: News & evidence
+  summary: Explore people, places, topics, and events across the Bedtime News archive.
+  detail: Individual news stories connect to timelines and a knowledge graph, with
+    evidence traced to the original passage.
+  status: Interactive public site
+  zh:
+    name: 历史经纬
+    category: 新闻与证据
+    summary: 沿着人物、地点、主题与事件，探索《睡前消息》新闻档案。
+    detail: 将每条独立新闻连接到时间线与知识图谱，并把证据追溯到原文中的具体片段。
+    status: 公开交互网站
+  links:
+    - label: Explore atlas
+      label_zh: 探索图谱
+      url: https://billshiyaozhang.github.io/bedtimenews-kg/
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/bedtimenews-kg
+- id: qanda
+  group: knowledge
+  featured: false
+  year: "2026"
+  url: https://billshiyaozhang.github.io/QandA/
+  name: QandA
+  category: Questions & inquiry
+  summary: Keep questions, competing answers, and follow-up questions in an archive
+    that grows through branching paths.
+  detail: Each answer stays attached to the question version it addressed, making
+    sources, context, and alternative paths easier to compare.
+  status: Public archive
+  zh:
+    name: 问题探索档案
+    category: 问题与探索
+    summary: 把问题、不同答案与后续追问保存在一起，让探索沿着不同分支持续展开。
+    detail: 每份答案固定关联它所回答的问题版本，方便比较来源、上下文与不同探索路径。
+    status: 公开档案
+  links:
+    - label: Explore archive
+      label_zh: 浏览档案
+      url: https://billshiyaozhang.github.io/QandA/
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/QandA
+- id: information-community
+  group: knowledge
+  featured: false
+  year: "2026"
+  url: https://billshiyaozhang.github.io/decentralized-information-community/
+  name: Information Community
+  category: Community knowledge
+  summary: Help small communities connect discussions, experiences, and sources into
+    knowledge they can maintain together.
+  detail: The same knowledge model supports a simple static website and a self-hosted
+    service, with proposals and history kept alongside the content.
+  status: Toolkit & demo
+  zh:
+    name: 共知
+    category: 社区知识
+    summary: 帮助小型社区把讨论、经验与资料连接为可以共同维护的知识。
+    detail: 同一套知识模型支持静态网站与自托管服务，让内容、修改提案和历史记录一起保留。
+    status: 工具包与演示
+  links:
+    - label: Explore demo
+      label_zh: 查看演示
+      url: https://billshiyaozhang.github.io/decentralized-information-community/
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/decentralized-information-community
+- id: xjtlu-guide
+  group: knowledge
+  featured: false
+  year: "2026"
+  url: https://billshiyaozhang.github.io/xjtlu-unofficial-guide/
+  name: XJTLU Unofficial Guide
+  category: Campus & community
+  summary: Bring together practical information about studying and living at XJTLU,
+    with room for corrections and student experiences.
+  detail: Keeps original sources, applicable contexts, and review status visible as
+    campus knowledge develops through contributions.
+  status: Early community edition
+  zh:
+    name: 西浦非官方指南
+    category: 校园与社区
+    summary: 汇集在西浦学习与生活的实用信息，让同学可以补充经验与纠正内容。
+    detail: 在共同积累校园知识的过程中，保留原始来源、适用范围与核验状态。
+    status: 社区共建初版
+  links:
+    - label: Read guide
+      label_zh: 阅读指南
+      url: https://billshiyaozhang.github.io/xjtlu-unofficial-guide/
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/xjtlu-unofficial-guide
+- id: ambient-agent
+  group: agents
+  featured: true
+  year: "2026"
+  url: https://github.com/BillShiyaoZhang/ambient-agent
+  name: Ambient Agent
+  category: Personal AI workspace
+  summary: Bring conversations, ongoing tasks, structured knowledge, and interactive
+    apps into a self-hosted personal workspace.
+  detail: Tasks can pause and resume, while reusable apps work with shared data and
+    capabilities approved by the user.
+  status: Self-hosted application
+  zh:
+    name: Ambient Agent
+    category: 个人 AI 工作区
+    summary: 在可自托管的个人工作区中，连接对话、持续任务、结构化知识与交互应用。
+    detail: 任务可以暂停和恢复，可复用的应用则通过用户批准的能力操作共享数据。
+    status: 自托管应用
+  links:
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/ambient-agent
+    - label: Docs
+      label_zh: 文档
+      url: https://billshiyaozhang.github.io/ambient-agent/
+- id: agent-comm
+  group: agents
+  featured: false
+  year: "2026"
+  url: https://github.com/BillShiyaoZhang/agent-comm
+  name: Agent Comm
+  category: Agent collaboration
+  summary: Let agents belonging to different people find one another, exchange messages,
+    and coordinate work.
+  detail: Combines encrypted communication and offline delivery with companion tools
+    for capability discovery and human approval.
+  status: Developer infrastructure
+  zh:
+    name: Agent Comm
+    category: 智能体协作
+    summary: 让不同人的智能体发现彼此、交换消息并协同工作。
+    detail: 将加密通信、离线投递与能力发现、人工确认等配套工具连接起来。
+    status: 开发者基础设施
+  links:
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/agent-comm
+    - label: Project site
+      label_zh: 项目网站
+      url: https://agent-communication.online/
+- id: you-researcher
+  group: agents
+  featured: false
+  year: "2026"
+  url: https://github.com/BillShiyaoZhang/you-researcher
+  name: You Researcher
+  category: Research simulation
+  summary: Run a simulated research lab, guiding AI students through literature reviews,
+    proposals, experiments, and paper drafts.
+  detail: Turns research decisions into playable interactions, combining arXiv search,
+    local code execution, and a mock mode that works without an API key.
+  status: Experimental simulation
+  zh:
+    name: 研究者
+    category: 科研模拟
+    summary: 经营一个模拟科研实验室，带领 AI 学生完成文献阅读、开题、实验与论文草稿。
+    detail: 把科研决策变成可交互的游戏过程，结合 arXiv 检索、本地代码执行，以及无需 API 密钥的模拟模式。
+    status: 实验性模拟游戏
+  links:
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/you-researcher
+- id: our-choice
+  group: everyday
+  featured: true
+  year: "2026"
+  url: https://github.com/BillShiyaoZhang/our-choice
+  name: Our Choice
+  category: Reading & attention
+  summary: Follow the sources you choose in one reader for articles, videos, and podcasts.
+  detail: A finite inbox and separate discovery page keep subscriptions intentional,
+    while collections and reading preferences stay on your device.
+  status: Local application
+  zh:
+    name: 自选
+    category: 阅读与注意力
+    summary: 用一个阅读工具，订阅自己选择的文章、视频与播客来源。
+    detail: 用有限的收件箱和独立的发现页保持主动订阅，把合集与阅读偏好保存在自己的设备上。
+    status: 本地应用
+  links:
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/our-choice
+    - label: Docs
+      label_zh: 文档
+      url: https://billshiyaozhang.github.io/our-choice/
+- id: chronograph
+  group: everyday
+  featured: true
+  year: "2025"
+  url: https://github.com/BillShiyaoZhang/ChronoGraph
+  name: ChronoGraph
+  category: Calendar & privacy
+  summary: Turn selected iOS calendar events into a shareable image while choosing
+    how much detail to reveal.
+  detail: Select calendars and dates, hide sensitive event details, and generate the
+    image on your device before sharing.
+  status: iOS prototype
+  zh:
+    name: ChronoGraph
+    category: 日历与隐私
+    summary: 将选定的 iOS 日历事件导出为便于分享的长图，自主选择展示多少细节。
+    detail: 选择日历与日期范围，隐藏敏感事件细节，在自己的设备上生成图片后再分享。
+    status: iOS 原型
+  links:
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/ChronoGraph
+- id: job-radar
+  group: everyday
+  featured: false
+  year: "2026"
+  url: https://billshiyaozhang.github.io/job-hunting/
+  name: Job Radar
+  category: Opportunity discovery
+  summary: Bring job opportunities from multiple public sources into one searchable
+    view.
+  detail: Source links, collection status, and update information help readers trace
+    each listing and judge how fresh it is.
+  status: Early public site
+  zh:
+    name: 工作雷达
+    category: 机会发现
+    summary: 把多个公开来源的招聘机会汇集到一个可检索的页面中。
+    detail: 用原文链接、采集状态与更新时间，帮助读者追溯岗位来源并判断信息是否新近。
+    status: 公开网站初版
+  links:
+    - label: Explore listings
+      label_zh: 浏览岗位
+      url: https://billshiyaozhang.github.io/job-hunting/
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/job-hunting
+- id: desire-supply
+  group: everyday
+  featured: false
+  year: "2026"
+  url: https://github.com/BillShiyaoZhang/desire-supply
+  name: Desire Supply
+  category: Work & participation
+  summary: Explore how people's abilities and willingness to contribute can connect
+    with meaningful, fairly compensated work.
+  detail: Uses synthetic participants and tasks to study explainable matching, review,
+    and accountability across a work request.
+  status: Research prototype
+  zh:
+    name: 愿作
+    category: 劳动与参与
+    summary: 探索如何把个人能力与投入意愿连接到有意义、报酬合理的劳动机会。
+    detail: 使用合成人物与任务，研究可解释匹配、审核和贯穿劳动需求全过程的责任记录。
+    status: 研究原型
+  links:
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/desire-supply
+    - label: Docs
+      label_zh: 文档
+      url: https://billshiyaozhang.github.io/desire-supply/
+- id: track-notes
+  group: everyday
+  featured: false
+  year: "2026"
+  url: https://github.com/BillShiyaoZhang/track-noetes
+  name: Track Notes
+  category: Music & audio
+  summary: Explore how a computer can follow a musical performance by turning microphone
+    audio into note sequences.
+  detail: The current demo runs BasicPitch on a sliding audio window and prints note
+    timing; score alignment and automatic page turning remain future work.
+  status: Audio transcription demo
+  zh:
+    name: 曲谱演奏跟踪
+    category: 音乐与音频
+    summary: 从麦克风音频中识别音符序列，探索计算机如何跟随真实演奏。
+    detail: 当前演示用 BasicPitch 对滑动音频窗口进行识别并输出音符时间；乐谱对齐与自动翻页仍在后续计划中。
+    status: 音频转录演示
+  links:
+    - label: Source
+      label_zh: 源代码
+      url: https://github.com/BillShiyaoZhang/track-noetes
